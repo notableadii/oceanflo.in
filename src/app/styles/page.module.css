@@ -1381,7 +1381,7 @@ body {
 /* iPhone 12/13/14 (390px and below) - Higher specificity */
 @media (max-width: 390px) {
   .companyInfoTitle {
-    font-size: 1.8rem !important;
+    font-size: 1.5rem !important;
     text-align: center !important;
     margin-top: 20px !important; /* Add top margin to prevent going off-screen */
     margin-bottom: 100px !important;
@@ -1420,11 +1420,22 @@ body {
 
   /* Company Info Title for very small screens */
   .companyInfoTitle {
-    font-size: 1.6rem !important;
-    max-width: 80vw !important;
+    font-size: 1.3rem !important;
+    text-align: center !important;
     margin-top: 30px !important;
     margin-bottom: 80px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 75vw !important; /* Reduced for very small screens */
+    width: 100% !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
     padding: 0 20px !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    position: relative !important;
   }
 
   .banner {
@@ -1463,7 +1474,6 @@ body {
   .missionTitle,
   .whatWeMakeTitle,
   .openingSoonTitle,
-  .companyInfoTitle,
   .openingSoonFinalTitle,
   .contactTitle {
     font-size: 1.6rem;
@@ -1713,11 +1723,30 @@ body {
 
   /* Scroll animation responsive sizing - Very Small Devices */
   .openingSoonTitle,
-  .openingSoonFinalTitle,
-  .companyInfoTitle {
+  .openingSoonFinalTitle {
     font-size: 1.1rem; /* Bigger initial size */
     text-align: center;
     margin-bottom: 100px;
+  }
+
+  /* Company Info Title for very small devices (320px and below) */
+  .companyInfoTitle {
+    font-size: 1.1rem !important;
+    text-align: center !important;
+    margin-top: 25px !important;
+    margin-bottom: 70px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 70vw !important;
+    width: 100% !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+    padding: 0 25px !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    position: relative !important;
   }
 
   /* Decrease margin above "WE ARE OPENING SOON" section */
