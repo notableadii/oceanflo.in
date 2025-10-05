@@ -1,0 +1,477 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(15px);
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 32px 32px 0 32px;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 24px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 20px 20px 0 0;
+}
+
+.titleSection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.fileIcon {
+  color: #10b981;
+  background: white;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+  min-width: 56px;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header h2 {
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 4px 0;
+}
+
+.lastUpdated {
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
+}
+
+.closeButton {
+  background: white;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.closeButton:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #475569;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  padding: 32px;
+}
+
+.intro {
+  background: #f0fdf4;
+  border-left: 4px solid #10b981;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 32px;
+}
+
+.intro p {
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  color: #374151;
+  margin: 0;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.section {
+  margin-bottom: 32px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  padding: 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.sectionIcon {
+  color: #10b981;
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionHeader h3 {
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.section > p {
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.95rem;
+  color: #475569;
+  margin: 0;
+  padding: 20px 20px 16px 20px;
+  line-height: 1.6;
+}
+
+.subsection {
+  padding: 0 20px 20px 20px;
+}
+
+.subsection:last-child {
+  padding-bottom: 20px;
+}
+
+.subsection h4 {
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #334155;
+  margin: 0 0 12px 0;
+}
+
+.subsection p {
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0 0 12px 0;
+  line-height: 1.6;
+}
+
+.subsection ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.subsection li {
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.subsection li:last-child {
+  margin-bottom: 0;
+}
+
+.subsection strong {
+  color: #334155;
+  font-weight: 600;
+}
+
+.subsection a {
+  color: #10b981;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.subsection a:hover {
+  color: #059669;
+  text-decoration: underline;
+}
+
+.legalNotice {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 1px solid #f59e0b;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.legalNotice h3 {
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #92400e;
+  margin: 0 0 12px 0;
+}
+
+.legalNotice p {
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.95rem;
+  color: #a16207;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 32px 32px 32px;
+  border-top: 1px solid #f1f5f9;
+  background: #f8fafc;
+  border-radius: 0 0 20px 20px;
+}
+
+.closeModalButton {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.closeModalButton:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* Custom Scrollbar */
+.modal::-webkit-scrollbar {
+  width: 12px;
+}
+
+.modal::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 8px 0;
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #cbd5e1 0%, #94a3b8 100%);
+  border-radius: 6px;
+  border: 2px solid white;
+  min-height: 40px;
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #94a3b8 0%, #64748b 100%);
+}
+
+.modal::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Firefox Scrollbar */
+.modal {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .overlay {
+    padding: 16px;
+  }
+
+  .modal {
+    max-height: 95vh;
+    border-radius: 16px;
+  }
+
+  .header {
+    padding: 24px 24px 0 24px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .content {
+    padding: 24px;
+  }
+
+  .footer {
+    padding: 20px 24px 24px 24px;
+    border-radius: 0 0 16px 16px;
+  }
+
+  .header h2 {
+    font-size: 1.5rem;
+  }
+
+  .sectionHeader h3 {
+    font-size: 1.125rem;
+  }
+
+  .closeModalButton {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+
+  /* Icon sizing for tablet */
+  .fileIcon {
+    padding: 14px;
+    min-width: 52px;
+    min-height: 52px;
+  }
+
+  .sectionIcon {
+    padding: 10px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  /* Scrollbar adjustments for tablet */
+  .modal::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .modal::-webkit-scrollbar-thumb {
+    border: 2px solid white;
+    min-height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay {
+    padding: 12px;
+  }
+
+  .modal {
+    max-height: 98vh;
+    border-radius: 12px;
+  }
+
+  .header {
+    padding: 20px 20px 0 20px;
+    border-radius: 12px 12px 0 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .titleSection {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .footer {
+    padding: 16px 20px 20px 20px;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .header h2 {
+    font-size: 1.25rem;
+  }
+
+  .sectionHeader {
+    padding: 16px;
+  }
+
+  .sectionHeader h3 {
+    font-size: 1rem;
+  }
+
+  .section > p,
+  .subsection {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .legalNotice {
+    padding: 20px;
+  }
+
+  .closeModalButton {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Icon sizing for mobile */
+  .fileIcon {
+    padding: 12px;
+    min-width: 48px;
+    min-height: 48px;
+  }
+
+  .sectionIcon {
+    padding: 8px;
+    min-width: 36px;
+    min-height: 36px;
+  }
+
+  /* Scrollbar adjustments for mobile */
+  .modal::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .modal::-webkit-scrollbar-thumb {
+    border: 1px solid white;
+    min-height: 30px;
+  }
+}

@@ -1,0 +1,304 @@
+.cookieConsent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 2px solid black;
+  z-index: 10000;
+  padding: 24px;
+  transform: translateY(100%);
+  opacity: 0;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.text h3 {
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.25rem;
+  font-weight: normal;
+  color: black;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.text p {
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: black;
+  margin: 0;
+  line-height: 1.6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.link {
+  color: black;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: all 0.2s ease;
+}
+
+.link:hover {
+  text-decoration: none;
+  background: black;
+  color: white;
+  padding: 2px 4px;
+  margin: 0 2px;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.declineButton,
+.acceptButton {
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  font-weight: normal;
+  padding: 12px 24px;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 100px;
+}
+
+.declineButton {
+  background: white;
+  color: black;
+}
+
+.declineButton:hover {
+  background: black;
+  color: white;
+}
+
+.acceptButton {
+  background: black;
+  color: white;
+}
+
+.acceptButton:hover {
+  background: white;
+  color: black;
+}
+
+.declineButton:disabled,
+.acceptButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #ccc;
+  border-color: #ccc;
+  color: #666;
+}
+
+.declineButton:disabled:hover,
+.acceptButton:disabled:hover {
+  background: #ccc;
+  color: #666;
+}
+
+/* Responsive Design - Large screens */
+@media (min-width: 1200px) {
+  .content {
+    max-width: 1400px;
+  }
+  
+  .text h3 {
+    font-size: 1.4rem;
+  }
+  
+  .text p {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive Design - Medium screens */
+@media (max-width: 1024px) {
+  .content {
+    gap: 24px;
+  }
+  
+  .text h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Responsive Design - Small tablets */
+@media (max-width: 768px) {
+  .cookieConsent {
+    padding: 20px;
+  }
+
+  .content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .text {
+    min-width: auto;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .declineButton,
+  .acceptButton {
+    flex: 1;
+    max-width: 140px;
+  }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 640px) {
+  .cookieConsent {
+    padding: 16px;
+  }
+  
+  .content {
+    gap: 16px;
+  }
+  
+  .text h3 {
+    font-size: 1.1rem;
+  }
+
+  .text p {
+    font-size: 0.85rem;
+  }
+
+  .declineButton,
+  .acceptButton {
+    font-size: 0.8rem;
+    padding: 10px 20px;
+    min-width: 80px;
+  }
+}
+
+/* Responsive Design - Small mobile */
+@media (max-width: 480px) {
+  .cookieConsent {
+    padding: 12px;
+  }
+  
+  .content {
+    gap: 12px;
+  }
+  
+  .text h3 {
+    font-size: 1rem;
+  }
+
+  .text p {
+    font-size: 0.8rem;
+  }
+
+  .declineButton,
+  .acceptButton {
+    font-size: 0.75rem;
+    padding: 8px 16px;
+    min-width: 70px;
+  }
+}
+
+/* Responsive Design - Very small mobile */
+@media (max-width: 360px) {
+  .cookieConsent {
+    padding: 10px;
+  }
+  
+  .content {
+    gap: 10px;
+  }
+  
+  .text h3 {
+    font-size: 0.9rem;
+  }
+
+  .text p {
+    font-size: 0.75rem;
+  }
+
+  .declineButton,
+  .acceptButton {
+    font-size: 0.7rem;
+    padding: 6px 12px;
+    min-width: 60px;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .cookieConsent {
+    padding: 16px;
+  }
+  
+  .content {
+    gap: 20px;
+  }
+  
+  .text h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  
+  .text p {
+    font-size: 0.85rem;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .cookieConsent {
+    border-top-width: 1px;
+  }
+  
+  .declineButton,
+  .acceptButton {
+    border-width: 1px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .declineButton:hover,
+  .acceptButton:hover {
+    transform: none;
+  }
+  
+  .link:hover {
+    background: none;
+    color: black;
+    padding: 0;
+    margin: 0;
+    text-decoration: underline;
+  }
+}

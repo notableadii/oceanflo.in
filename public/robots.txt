@@ -1,0 +1,64 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.oceanflo.in/sitemap.xml
+
+# Crawl delay (optional - be respectful to servers)
+Crawl-delay: 1
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Block access to admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+
+# Allow important files
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.ico
+Allow: /*.xml
+Allow: /*.txt
+
+# Block unnecessary file types
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.docx$
+Disallow: /*.xls$
+Disallow: /*.xlsx$
+Disallow: /*.ppt$
+Disallow: /*.pptx$
+
+# Block search and filter pages (if any)
+Disallow: /search?
+Disallow: /filter?
+Disallow: /sort?
+
+# Allow all content pages
+Allow: /
+Allow: /privacy-policy
+Allow: /terms-and-conditions
+Allow: /cookie-policy

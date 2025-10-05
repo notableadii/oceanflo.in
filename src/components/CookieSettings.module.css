@@ -1,0 +1,1036 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Notifications Container */
+.notificationsContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10001;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.notification {
+  background: white;
+  border: 2px solid black;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  animation: slideInRight 0.3s ease-out;
+  max-width: 100%;
+}
+
+.notification.success {
+  border-color: #10b981;
+}
+
+.notification.error {
+  border-color: #ef4444;
+}
+
+.notificationHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.notificationIcon {
+  flex-shrink: 0;
+}
+
+.notification.success .notificationIcon {
+  color: #10b981;
+}
+
+.notification.error .notificationIcon {
+  color: #ef4444;
+}
+
+.notificationMessage {
+  flex: 1;
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  font-weight: normal;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.expandButton {
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.expandButton:hover {
+  background: #f8f8f8;
+}
+
+.closeNotificationButton {
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+}
+
+.closeNotificationButton:hover {
+  opacity: 1;
+  background: #f8f8f8;
+}
+
+.notificationDetails {
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: black;
+  line-height: 1.4;
+  padding: 12px;
+  background: #f8f8f8;
+  border: 1px solid #e5e5e5;
+  margin-top: 8px;
+  word-break: break-word;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Checkbox toggle styles removed - using button-based toggle approach below */
+
+.modal {
+  background: white;
+  border: 2px solid black;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+  max-height: 85vh;
+  height: auto;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 2px solid black;
+  flex-shrink: 0;
+}
+
+.titleSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.powerIcon {
+  color: black;
+}
+
+.header h2 {
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: black;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.closeButton {
+  background: none;
+  border: 2px solid black;
+  color: black;
+  cursor: pointer;
+  padding: 10px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 4px;
+}
+
+.closeButton:hover {
+  background: black;
+  color: white;
+}
+
+.content {
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.intro {
+  margin-bottom: 20px;
+}
+
+.intro p {
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.85rem;
+  font-weight: normal;
+  color: black;
+  margin: 0;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.preferences {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.preferenceItem {
+  border: 2px solid black;
+  padding: 20px;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.preferenceItem:hover {
+  background: #f8f8f8;
+}
+
+.preferenceInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  min-height: 44px;
+  gap: 12px;
+}
+
+.preferenceInfo h4 {
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  color: black;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.preferenceInfo p {
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: black;
+  margin: 0;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  opacity: 0.8;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-top: 2px solid black;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.secondary {
+  background: white !important;
+  color: black !important;
+  border: 2px solid black !important;
+  padding: 14px 28px !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.8px !important;
+  min-width: 140px !important;
+  transition: all 0.3s ease !important;
+}
+
+.secondary:hover {
+  background: #f8f8f8 !important;
+  color: black !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.saveButton {
+  background: black;
+  border: 2px solid black;
+  color: white;
+  padding: 14px 28px;
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  min-width: 160px;
+}
+
+.saveButton:hover:not(:disabled) {
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.saveButton:disabled {
+  background: #ccc;
+  border-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.hasChanges {
+  background: #000 !important;
+  color: white !important;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+.footerNote {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  text-align: center;
+  margin: 0;
+  line-height: 1.4;
+  max-width: 500px;
+  padding: 0 20px;
+}
+
+/* Responsive Design - Large screens */
+@media (min-width: 1200px) {
+  .modal {
+    max-width: 700px;
+  }
+
+  .header h2 {
+    font-size: 1.75rem;
+  }
+
+  .preferenceInfo h4 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Responsive Design - Medium screens */
+@media (max-width: 1024px) {
+  .modal {
+    max-width: 550px;
+  }
+
+  .header h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Responsive Design - Small tablets */
+@media (max-width: 768px) {
+  .overlay {
+    padding: 16px;
+    align-items: stretch;
+  }
+
+  .modal {
+    max-width: 500px;
+    max-height: 90vh;
+    height: auto;
+  }
+
+  .header {
+    padding: 16px;
+  }
+
+  .content {
+    padding: 16px;
+  }
+
+  .actions {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .header h2 {
+    font-size: 1.3rem;
+  }
+
+  .closeButton {
+    min-width: 48px;
+    min-height: 48px;
+    padding: 12px;
+  }
+
+  .preferenceInfo h4 {
+    font-size: 0.95rem;
+  }
+
+  .preferenceInfo p {
+    font-size: 0.75rem;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .saveButton,
+  .secondary {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .notificationsContainer {
+    top: 16px;
+    right: 16px;
+    max-width: 350px;
+  }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 640px) {
+  .overlay {
+    padding: 8px;
+    align-items: stretch;
+  }
+
+  .modal {
+    max-width: 100%;
+    max-height: 95vh;
+    height: auto;
+    margin: auto 0;
+  }
+
+  .header {
+    padding: 12px;
+  }
+
+  .content {
+    padding: 12px;
+  }
+
+  .actions {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .header h2 {
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
+
+  .titleSection {
+    gap: 6px;
+  }
+
+  .powerIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .closeButton {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 10px;
+  }
+
+  .intro {
+    margin-bottom: 16px;
+  }
+
+  .intro p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .preferences {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .preferenceItem {
+    padding: 12px;
+  }
+
+  .preferenceInfo {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .preferenceInfo > div:first-child {
+    flex: 1;
+  }
+
+  .preferenceInfo h4 {
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+  }
+
+  .preferenceInfo p {
+    font-size: 0.7rem;
+    line-height: 1.3;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .saveButton,
+  .secondary {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 12px 20px !important;
+    font-size: 0.85rem !important;
+  }
+
+  .footerNote {
+    font-size: 0.7rem;
+    padding: 0;
+    margin: 8px 0 0 0;
+  }
+
+  .toggle {
+    width: 36px;
+    height: 36px;
+    align-self: center;
+  }
+
+  .notificationsContainer {
+    top: 8px;
+    right: 8px;
+    left: 8px;
+    max-width: none;
+  }
+
+  .notification {
+    padding: 12px;
+  }
+
+  .notificationMessage {
+    font-size: 0.75rem;
+  }
+}
+
+/* Responsive Design - Small mobile */
+@media (max-width: 480px) {
+  .overlay {
+    padding: 4px;
+    align-items: stretch;
+  }
+
+  .modal {
+    max-height: 98vh;
+    height: auto;
+    margin: auto 0;
+  }
+
+  .header {
+    padding: 10px;
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  .actions {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .header h2 {
+    font-size: 1rem;
+    line-height: 1.1;
+  }
+
+  .powerIcon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .closeButton {
+    min-width: 40px;
+    min-height: 40px;
+    padding: 8px;
+  }
+
+  .intro {
+    margin-bottom: 12px;
+  }
+
+  .intro p {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .preferences {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .preferenceItem {
+    padding: 10px;
+  }
+
+  .preferenceInfo {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .preferenceInfo > div:first-child {
+    flex: 1;
+  }
+
+  .preferenceInfo h4 {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+  }
+
+  .preferenceInfo p {
+    font-size: 0.65rem;
+    line-height: 1.2;
+  }
+
+  .actionButtons {
+    gap: 6px;
+  }
+
+  .saveButton,
+  .secondary {
+    padding: 10px 16px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .footerNote {
+    font-size: 0.65rem;
+    margin: 6px 0 0 0;
+    line-height: 1.2;
+  }
+
+  .toggle {
+    width: 32px;
+    height: 32px;
+    align-self: center;
+  }
+
+  .notificationsContainer {
+    top: 4px;
+    right: 4px;
+    left: 4px;
+  }
+
+  .notification {
+    padding: 10px;
+  }
+
+  .notificationMessage {
+    font-size: 0.7rem;
+  }
+}
+
+/* Responsive Design - Very small mobile */
+@media (max-width: 360px) {
+  .overlay {
+    padding: 2px;
+  }
+
+  .modal {
+    max-height: 99vh;
+  }
+
+  .header {
+    padding: 8px;
+  }
+
+  .content {
+    padding: 8px;
+  }
+
+  .actions {
+    padding: 8px;
+    gap: 6px;
+  }
+
+  .header h2 {
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+
+  .titleSection {
+    gap: 4px;
+  }
+
+  .powerIcon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .closeButton {
+    min-width: 36px;
+    min-height: 36px;
+    padding: 6px;
+  }
+
+  .intro {
+    margin-bottom: 10px;
+  }
+
+  .intro p {
+    font-size: 0.7rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .preferences {
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .preferenceItem {
+    padding: 8px;
+  }
+
+  .preferenceInfo {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+
+  .preferenceInfo > div:first-child {
+    flex: 1;
+  }
+
+  .preferenceInfo h4 {
+    font-size: 0.75rem;
+    margin-bottom: 2px;
+  }
+
+  .preferenceInfo p {
+    font-size: 0.6rem;
+    line-height: 1.1;
+  }
+
+  .saveButton,
+  .secondary {
+    font-size: 0.75rem !important;
+    padding: 8px 12px !important;
+  }
+
+  .footerNote {
+    font-size: 0.6rem;
+    margin: 4px 0 0 0;
+    line-height: 1.1;
+  }
+
+  .toggle {
+    width: 28px;
+    height: 28px;
+    align-self: center;
+  }
+
+  .notificationsContainer {
+    top: 2px;
+    right: 2px;
+    left: 2px;
+  }
+
+  .notification {
+    padding: 8px;
+  }
+
+  .notificationMessage {
+    font-size: 0.65rem;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .overlay {
+    padding: 4px;
+    align-items: stretch;
+  }
+
+  .modal {
+    max-height: 98vh;
+    height: auto;
+    margin: auto 0;
+  }
+
+  .header {
+    padding: 8px 12px;
+  }
+
+  .content {
+    padding: 8px 12px;
+  }
+
+  .actions {
+    padding: 8px 12px;
+    gap: 6px;
+  }
+
+  .header h2 {
+    font-size: 0.9rem;
+  }
+
+  .closeButton {
+    min-width: 36px;
+    min-height: 36px;
+    padding: 6px;
+  }
+
+  .intro {
+    margin-bottom: 8px;
+  }
+
+  .intro p {
+    font-size: 0.7rem;
+    line-height: 1.2;
+  }
+
+  .preferences {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .preferenceItem {
+    padding: 8px;
+  }
+
+  .preferenceInfo {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+
+  .preferenceInfo h4 {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+
+  .preferenceInfo p {
+    font-size: 0.65rem;
+  }
+
+  .actionButtons {
+    flex-direction: row;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .saveButton,
+  .secondary {
+    width: auto !important;
+    flex: 1;
+    font-size: 0.75rem !important;
+    padding: 8px 12px !important;
+  }
+
+  .footerNote {
+    font-size: 0.6rem;
+    margin: 4px 0 0 0;
+  }
+
+  .toggle {
+    width: 28px;
+    height: 28px;
+    align-self: center;
+  }
+
+  .notificationsContainer {
+    top: 4px;
+    right: 4px;
+    max-width: 280px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .modal {
+    border-width: 1px;
+  }
+
+  .header {
+    border-bottom-width: 1px;
+  }
+
+  .actions {
+    border-top-width: 1px;
+  }
+
+  .preferenceItem {
+    border-width: 1px;
+  }
+
+  .closeButton,
+  .cancelButton,
+  .saveButton {
+    border-width: 1px;
+  }
+
+  .notification {
+    border-width: 1px;
+  }
+
+  .slider {
+    border-width: 1px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .closeButton:hover,
+  .cancelButton:hover,
+  .saveButton:hover {
+    transform: none;
+  }
+
+  .preferenceItem:hover {
+    background: white;
+  }
+
+  .expandButton:hover,
+  .closeNotificationButton:hover {
+    background: none;
+  }
+}
+
+/* Working toggle button styles - integrated with main styles above */
+.toggle {
+  position: relative;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  cursor: pointer;
+  border: 2px solid black;
+  background: white;
+  transition: all 0.2s ease;
+  font-size: 16px;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.toggle:hover {
+  background: #f8f8f8;
+  border-color: #333;
+}
+
+.toggle.active {
+  background: black;
+  color: white;
+}
+
+.toggle.disabled {
+  background: #e5e5e5;
+  color: #666;
+  cursor: not-allowed;
+  border-color: #ccc;
+  opacity: 0.7;
+}
+
+.preferenceName {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.preferenceDescription {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+  line-height: 1.3;
+  font-family: "WixMadeForDisplay", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+}
