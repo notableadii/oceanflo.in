@@ -1378,24 +1378,29 @@ body {
   }
 }
 
-/* iPhone 12/13/14 (390px and below) */
+/* iPhone 12/13/14 (390px and below) - Higher specificity */
 @media (max-width: 390px) {
   .companyInfoTitle {
-    font-size: 1.8rem;
-    text-align: center;
-    margin-bottom: 100px;
-    max-width: 90vw; /* Increased from 85vw to 90vw for better fit */
-    margin-left: auto;
-    margin-right: auto;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-    line-height: 1.2;
-    padding: 0 10px; /* Add padding to prevent edge overflow */
+    font-size: 1.8rem !important;
+    text-align: center !important;
+    margin-top: 20px !important; /* Add top margin to prevent going off-screen */
+    margin-bottom: 100px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 85vw !important; /* Reduced from 90vw for better fit */
+    width: 100% !important; /* Ensure full width is available */
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+    padding: 0 15px !important; /* Increased padding for better spacing */
+    box-sizing: border-box !important; /* Ensure padding is included in width */
+    display: block !important; /* Ensure it's a block element */
+    position: relative !important; /* Ensure proper positioning */
   }
 }
 
-/* iPhone Mini (375px and below) */
+/* iPhone Mini (375px and below) - Even smaller screens */
 @media (max-width: 375px) {
   .bannerTitle {
     font-size: 5rem;
@@ -1411,6 +1416,15 @@ body {
     word-wrap: break-word;
     overflow-wrap: break-word;
     line-height: 1.1;
+  }
+
+  /* Company Info Title for very small screens */
+  .companyInfoTitle {
+    font-size: 1.6rem !important;
+    max-width: 80vw !important;
+    margin-top: 30px !important;
+    margin-bottom: 80px !important;
+    padding: 0 20px !important;
   }
 
   .banner {
@@ -1571,14 +1585,16 @@ body {
 
   /* Ensure companyInfoTitle fits properly on small screens */
   .companyInfoTitle {
-    max-width: 90vw;
-    margin-left: auto;
-    margin-right: auto;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-    line-height: 1.2;
-    padding: 0 10px;
+    max-width: 85vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 20px !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+    padding: 0 15px !important;
+    box-sizing: border-box !important;
   }
   .openingSoonFinalTitle {
     font-size: 0.7rem;
